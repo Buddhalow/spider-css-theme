@@ -1,0 +1,102 @@
+:root {
+  --button-border-radius: 5pt;
+  --button-h: 0deg;
+  --button-s: 0%;
+  --button-l: 70%;
+  --button-bg: linear-gradient(
+    0deg,
+    hsl(var(--button-h), var(--button-s), var(--button-l)),
+    hsl(var(--button-h), var(--button-s), calc(var(--button-l) + 81%))
+  );
+  --primary-h: 20deg;
+  --primary-s: 80%;
+  --primary-l: 50%;
+  --danger-h: 0deg;
+  --danger-s: 70%;
+  --danger-l: 50%;
+  --warning-h: 50deg;
+  --warning-s: 70%;
+  --warning-l: 50%;
+  --success-h: 80deg;
+  --success-s: 70%;
+  --success-l: 50%;
+  --info-h: 190deg;
+  --info-s: 70%;
+  --info-l: 50%;
+  --hyperlink-color: hsl(var(--primary-h), calc(var(--primary-s) + 20%), var(--primary-l));
+}
+
+body {
+  font-family: Tahoma, sans-serif;
+  font-size: 11px;
+}
+a {
+  color: var(--hyperlink-color);
+}
+
+button {
+  border: none;
+  background: transparent;
+  padding: 5pt 8pt;
+}
+.button-default {
+  border-radius: var(--button-border-radius);
+  border: 1px solid hsl(var(--button-h), var(--button-s), calc(var(--button-l) - 10%));
+  background: linear-gradient(
+    0deg,
+    hsl(var(--button-h), var(--button-s), var(--button-l)),
+    hsl(calc(var(--button-h) + 10deg), var(--button-s), calc(var(--button-l) + 21%))
+  );
+  font-weight: bold;
+  box-shadow: inset 0 1px 0px 1px hsla(calc(var(--button-h) + 10deg), var(--button-s), calc(var(--button-l) + 30%), 100%),  0 1px 1px 1px /*7px 13px -3px*/ hsla(var(--button-h), calc(var(--button-s) - 50%), calc(var(--button-l)), 50%) !important;
+  color: black;
+  text-shadow: 0 1pt 0 white;
+}
+.button-primary, .button-danger, .button-warning, .button-info {
+  color: white;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, .2);
+}
+.button-primary {
+  --button-h: var(--primary-h);
+  --button-s: var(--primary-s);
+  --button-l: var(--primary-l);
+}
+
+
+.button-danger {
+  --button-h: var(--danger-h);
+  --button-s: var(--danger-s);
+  --button-l: var(--danger-l);
+}
+
+
+.button-warning {
+  --button-h: var(--warning-h);
+  --button-s: var(--warning-s);
+  --button-l: var(--warning-l);
+}
+
+.button-success {
+  --button-h: var(--success-h);
+  --button-s: var(--success-s);
+  --button-l: var(--success-l);
+}
+
+.button-info {
+  --button-h: var(--info-h);
+  --button-s: var(--info-s);
+  --button-l: var(--info-l);
+}
+
+.button-default:active {
+  box-shadow: inset 0 1px 0px 1px hsla(calc(var(--button-h) - 10deg), var(--button-s), calc(var(--button-l) - 10%), 100%),  0 7px 13px -3px hsla(var(--button-h), var(--button-s), calc(var(--button-l)), 50%) !important;
+  background: linear-gradient(
+    180deg,
+    hsl(var(--button-h), var(--button-s), calc(var(--button-l) - 10%)),
+    hsl(var(--button-h), var(--button-s), calc(var(--button-l) + 0%))
+  );
+}
+
+.form-control {
+  border: 1pt solid rgba(127, 127, 127, 1);
+}
